@@ -5,6 +5,8 @@ using System.Xml;
 // Reference:
 // https://zwiftinsider.com/world-tag
 
+// Author:
+// Joe Meyer joe.meyer@iceteagroup.com
 
 namespace ZwiftWorld
 {
