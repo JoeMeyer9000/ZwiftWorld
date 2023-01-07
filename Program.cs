@@ -2,7 +2,7 @@
 using System.IO;
 using System.Xml;
 
-// Refrence:
+// Reference:
 // https://zwiftinsider.com/world-tag
 
 
