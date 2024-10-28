@@ -24,12 +24,13 @@ namespace ZwiftWorld
                 new World{ Number = 1, Name = "Watopia" },
                 new World{ Number = 2, Name = "Richmond" },
                 new World{ Number = 3, Name = "London" },
-                new World{ Number = 4, Name = "New York" },
+                new World{ Number = 4, Name = "New York City" },
                 new World{ Number = 5, Name = "Innsbruck" },
                 new World{ Number = 7, Name = "Yorkshire" },
                 new World{ Number = 9, Name = "Makuri Islands" },
                 new World{ Number = 10, Name = "France" },
                 new World{ Number = 11, Name = "Paris" },
+                new World{ Number = 13, Name = "Scotland" },
             };
 
         static void Main()
