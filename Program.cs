@@ -18,7 +18,7 @@ namespace ZwiftWorld
             public string Name;
         }
 
-        private static readonly string MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        private static readonly string MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData );
 
         private static readonly World[] Worlds = new World[] {
                 new World{ Number = 1, Name = "Watopia" },
