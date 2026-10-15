@@ -19,6 +19,7 @@ namespace ZwiftWorld
         }
 
         private static readonly string MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData );
+        private const string EVENT_ONLY = "(event only)";
 
         private static readonly World[] Worlds = new World[] {
                 new World{ Number = 1, Name = "Watopia" },
@@ -26,9 +27,12 @@ namespace ZwiftWorld
                 new World{ Number = 3, Name = "London" },
                 new World{ Number = 4, Name = "New York City" },
                 new World{ Number = 5, Name = "Innsbruck" },
+                new World{ Number = 6, Name = "Bologna " + EVENT_ONLY },
                 new World{ Number = 7, Name = "Yorkshire" },
+                new World{ Number = 8, Name = "Crit City " + EVENT_ONLY },
                 new World{ Number = 9, Name = "Makuri Islands" },
                 new World{ Number = 10, Name = "France" },
+                new World{ Number = 12, Name = "Gravel Mountain "  + EVENT_ONLY},
                 new World{ Number = 11, Name = "Paris" },
                 new World{ Number = 13, Name = "Scotland" },
             };
@@ -65,8 +69,15 @@ namespace ZwiftWorld
                     Environment.Exit(2);
 
                 // if the user entered a number it must be a valid world number
-                if (!int.TryParse(selected, out int id) || string.IsNullOrEmpty(GetWorldName(id)))
-                    throw new Exception("Invalid input, a world numbers is expected");
+                if (!int.TryParse(selected, out int id))
+                    throw new Exception("Invalid input, a world number is expected");
+
+                var worldName = GetWorldName(id);
+                if (string.IsNullOrEmpty(worldName))
+                    throw new Exception("Invalid input, a world number is expected");
+
+                if (worldName.Contains(EVENT_ONLY)) 
+                    throw new Exception("Sorry, this world is for events only");
 
                 // create WORLD node if it doesn't exist
                 if (worldNode == null)
@@ -85,9 +96,9 @@ namespace ZwiftWorld
                 Console.WriteLine($"The Zwift world has been changed to \"{GetWorldName(id)}\"");
                 Console.ResetColor();
 
-                Console.WriteLine();
-                Console.WriteLine("Press any key to exit...");
-                Console.ReadKey();
+                //Console.WriteLine();
+                //Console.WriteLine("Press any key to exit...");
+                //Console.ReadKey();
 
                 Environment.Exit(0);
             }
